@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: keeptrying
+  labels:
+    app: keeptrying
+    service: keeptrying
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: keeptrying
+      service: keeptrying
+  template:
+    metadata:
+      labels:
+        app: keeptrying
+        service: keeptrying
+    spec:
+      containers:
+      - name: keeptrying-container
+        image: hhana982/keeptrying:1.<version>
+        ports:
+        - containerPort: 5000
+        env: 
